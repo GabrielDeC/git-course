@@ -116,3 +116,4 @@ git config --global alias.s status --> Comando que cria um alias para status que
 
 git tag -a 1.0.0 -m "atualizacao" --> Comando para atualizar realises de tags/versões de software
 
+git revert hashdocommit --> comando para revert o que foi alterado no commit sem apagar o commit.
