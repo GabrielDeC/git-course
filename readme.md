@@ -114,3 +114,5 @@ No Unix, é possível criar um alias para comandos.
 git config --global alias.s status --> Comando que cria um alias para status que poderia ser executado com o s.
 
 
+git tag -a 1.0.0 -m "atualizacao" --> Comando para atualizar realises de tags/versões de software
+
