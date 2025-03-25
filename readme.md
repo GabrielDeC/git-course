@@ -40,3 +40,77 @@ git reset --mixed hashanterior --> esse comando irá desfazer um commit deixando
           --hard hashanterior --> esse comando irá desfazer um commit apagando todas as alterações realizadas
 
 Para que seja adicionado um Repositório Remoto, deve-se criar um repositório no GitHub e seguir orientações colocadas no próprio site.
+
+Para que seja possível realizar um commit dentro do repositório remoto, segue o comando
+
+git push origin main
+
+E se necessário clonar um repositório para a sua conta
+
+git clone endereçoSSH
+
+BRANCH
+
+Branch é um ponteiro de commits, isso significa que posso abrir uma branch a parte da Master para realizar alterações específicas de um bug, sem que precise alterar o arquivo principal de funcionamento.
+
+Exemplo, se há um bug na master, mas que só dá problema em uma parte do front de um site. Ao invés de alterar o que tem na branch master direto que pode afetar front e back end, eu abro uma branch a parte para tratar daquele ponto específico do código e quando commitar, vai alterar naquele "snapshot" que depois pode ser mergeado.
+
+Quais as vantagens?
+
+1.) Modificar o código sem alterar o local principal
+2.) Fácil de desativar
+3.) Múltiplas pessoas trabalhando ao mesmo tempo sem atrapalhar ninguém
+4.) Evita conflitos de código, pois a branch está mexendo em uma linha de commits própria.
+
+Para criar um branch, git checkout -b nomebranch. Para saber em qual branch está, git branch
+
+Para mudar o branch, git checkout nomebranch. Para deletar um branch, git branch -D nomebranch
+
+
+Como unir Branchs? Merge ou Rebase
+
+Exemplo, em um branch com 3 commits e 2 Branchs (main e iss53). Se eu criar um commit no segundo branch, então, o main está 1 commit 'atrasado'. Se eu crio um novo commit no main, cria-se uma ramificação entre o main e o iss53. Se em seguida eu criar um novo commit em iss53, teríamos uma diferença de 2 commits com o main e 1 com o iss53.
+
+Merge
+
+Utilizando um Merge, seria criado o novo commit com a junção de todas as alterações de todas as branchs alteradas junto da main. Criando, assim, um ciclo 'diamante' que foi criado tirando a linearidade dos commits ao criar dois commits em iss53 e 1 na master, ao realizar o merge, o ciclo fecha.
+
+Vantagens: Operação não destrutiva, pois cria um commit extra.
+Desvantagem: Commit extra que teoricamente só junta alterações já realizadas, pode ser visto como sem sentido de armazenamento e polui o histórico.
+
+Rebase
+
+Utilizando o rebase, ao invés dele criar um novo commit juntando alterações. Ele pega o commit criado fora da main e colocar no commit a frente do último alterado na main do caminho da main.
+
+Vantagem: Evita commit extra e mantém o histórico linear
+Desvantagem: Perde ordem cronológica, pois apaga o commit feito apenas na branch iss53 e coloca na frente do último commit da main e isso altera histórico e se outra pessoa está alterando também pode causar conflito de histórico.
+
+Geralmente Merge é utilizado no final de um grande projeto que usamos um Pull Request.
+
+
+
+gitignore é um comando que traz algumas regras do git para ignorar alguns tipos de arquivos que não devem ser enviados ou commitados.
+
+Para rodar, 
+
+vim .gitignore
+
+E assim, adiciona-se os arquivos necessários por meio da extensão ou do arquivo especifico:
+
+Extensão: *.xlsx
+Arquivo: nomedoarquivo.xlsx
+*
+
+Em uma situação que você está em uma branch que tem alterações para commit, mas precisará tratar outras tarefas em uma branch diferente, com o comando git stash irá salvar as alterações na branch atual e aí pode ser criado o branch e tratado o que for necessário nele.
+
+Para retornar essas alterações que foram 'congeladas' basta realizar o comando git stash apply para retornar.
+
+git stash list --> Lista de todos os stashs
+git stash clear --> limpa todos os stashs salvos
+
+
+No Unix, é possível criar um alias para comandos.
+
+git config --global alias.s status --> Comando que cria um alias para status que poderia ser executado com o s.
+
+
