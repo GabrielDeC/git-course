@@ -22,4 +22,10 @@ git log --author="" --> Mostra todas as alterações realizadas por uma pessoa
 git show hashdocommit --> mostra a alteração realizada naquele commit
 git log --graph --> mostra os grafos de alterações e interações entre os commits e as branchs
 git shortlog --> mostra os autores e os commits realizadas com as quantidades totais de commits
-git shortlog -sn --> mostra resumidade os autores e quantidades de commits 
+git shortlog -sn --> mostra resumidade os autores e quantidades de commits
+
+Outra área de comandos do git é verificar as alterações dos arquivos antes mesmo de gerar o commit para evitar erros
+
+git diff --> vai mostrar todas as alterarções realizadas em todos os arquivos alterados
+git diff --name-only --> vai mostrar apenas os arquivos alterados
+git diff nomedoarquivo --> especifica o arquivo que se deseja validar as alterações 
