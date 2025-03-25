@@ -28,4 +28,13 @@ Outra área de comandos do git é verificar as alterações dos arquivos antes m
 
 git diff --> vai mostrar todas as alterarções realizadas em todos os arquivos alterados
 git diff --name-only --> vai mostrar apenas os arquivos alterados
-git diff nomedoarquivo --> especifica o arquivo que se deseja validar as alterações 
+git diff nomedoarquivo --> especifica o arquivo que se deseja validar as alterações
+
+Adicionalmente, podemos dar um "undo" as alterações realizadas por meio dos comandos abaixo
+
+git checkout nomedoarquivo --> comando que irá desfazer as alterações realizadas antes de entrar em staging
+git restore --staged nomedoarquivo --> comando que irá retirar o arquivo do staging
+
+          --soft hashanterior --> esse comando irá desfazer um commit deixando o arquivo alterado no commit em staging  
+git reset --mixed hashanterior --> esse comando irá desfazer um commit deixando o arquivo alterado em modified
+          --hard hashanterior --> esse comando irá desfazer um commit apagando todas as alterações realizadas
