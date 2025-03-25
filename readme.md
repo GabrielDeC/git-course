@@ -12,3 +12,5 @@ O primeiro é o arquivo criado sem que o git ainda tenha conhecimento, quando ad
 
 Para adicionar ao Staging - git add <arquivo.extensão>
 
+Se necessário saber o que está em Modified disponível para Stage, utilizar git status
+E para realizar o commit dos arquivos modificados git commit -m "modificação realizada"
