@@ -14,3 +14,12 @@ Para adicionar ao Staging - git add <arquivo.extensão>
 
 Se necessário saber o que está em Modified disponível para Stage, utilizar git status
 E para realizar o commit dos arquivos modificados git commit -m "modificação realizada"
+
+Outros comandos importantes para visualização da sequência de versões,
+
+git log --> visualiza todas as versões commitadas e as informações dos que alteraram detalhes de horário e data.
+git log --author="" --> Mostra todas as alterações realizadas por uma pessoa
+git show hashdocommit --> mostra a alteração realizada naquele commit
+git log --graph --> mostra os grafos de alterações e interações entre os commits e as branchs
+git shortlog --> mostra os autores e os commits realizadas com as quantidades totais de commits
+git shortlog -sn --> mostra resumidade os autores e quantidades de commits 
