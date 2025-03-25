@@ -38,3 +38,5 @@ git restore --staged nomedoarquivo --> comando que irá retirar o arquivo do sta
           --soft hashanterior --> esse comando irá desfazer um commit deixando o arquivo alterado no commit em staging  
 git reset --mixed hashanterior --> esse comando irá desfazer um commit deixando o arquivo alterado em modified
           --hard hashanterior --> esse comando irá desfazer um commit apagando todas as alterações realizadas
+
+Para que seja adicionado um Repositório Remoto, deve-se criar um repositório no GitHub e seguir orientações colocadas no próprio site.
